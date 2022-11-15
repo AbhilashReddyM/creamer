@@ -1,0 +1,94 @@
+\documentclass{creamer}
+
+
+% \setsansfont{Lucida Sans}
+\tcbset{sharp corners,colback=Mblue!5!white,colframe=lightBlue}
+\setbeamertemplate{itemize subitem}{--}
+\setbeamertemplate{enumerate items}[default]
+\usepackage[export]{adjustbox}
+
+
+% title page stuff
+\title[Short Title]{Long Title}
+\subtitle{N\textsuperscript{th} Science Conference, Location}
+\author[Short Name]{Long Name}
+\institute[Short Inst.]
+{Long Inst.}
+\date{October 1, 2012}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%   title slide   %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begingroup  % to have a separate headline/footline for the title slide without the slide number
+
+% setup the headline or lack thereof
+\setbeamertemplate{headline}{}
+
+% Set footline for title slide. Same as the default, but without the slide number.
+\setbeamertemplate{footline}{
+  % Set color box
+  \begin{beamercolorbox}[ht=1.5em,wd=\paperwidth]{footline}
+  \end{beamercolorbox}
+  % Position Logo
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south west,xshift=-1pt,yshift=-1pt] at (current page.south west)
+    {\includegraphics[height=0.6cm,keepaspectratio]{M.png}};
+  \end{tikzpicture}
+  % Position footline texts
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south west,xshift=30pt,yshift=-1pt] at (current page.south west)
+    {\color{white}Capecelatro Research Group @ UMich};
+  \end{tikzpicture}
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=south east,xshift=-1pt,yshift=-1pt] at (current page.south east)
+    {\color{white}Science Conference, Location};
+  \end{tikzpicture}
+}
+\begin{frame}[noframenumbering]
+  \titlepage
+  \centering
+  {\scriptsize \textcolor{red}{Funding: My funding source}}
+\end{frame}
+\endgroup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% end title slide %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Section 1}
+\begin{frame}
+\frametitle{Section 1}
+Hello World!
+\end{frame}
+
+\section{Section 2}
+\begin{frame}
+\frametitle{Section 2}
+Hello World!
+\end{frame}
+
+\section{Section 3}
+\begin{frame}
+\frametitle{Section 3}
+Hello World!
+\end{frame}
+
+\begin{frame}[plain]
+  \begin{tikzpicture}[overlay, remember picture]
+    \fill[color=Mblue] (current page.north west) rectangle ([shift = {(0, -0.45\paperheight)}] current page.north east);
+\end{tikzpicture}
+\vspace{-1.65\baselineskip}
+\begin{minipage}[b][0.35\paperheight]{\textwidth}
+    \vspace{\baselineskip}
+    \usebeamerfont{title}
+    \usebeamercolor[fg]{frametitle}
+    \centering
+    {\LARGE \bfseries The End}
+  \end{minipage}
+  \vspace*{0pt plus 100fill}
+
+\end{frame}
+
+
+\end{document}
